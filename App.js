@@ -10,7 +10,7 @@ const MusicPlayer=({userName,apiKey})=>{
   const [text,setText]=useState('');
   const [loading,setLoading]=useState(false);
   const [artist,setArtist]=useState('');
-  const [pic,setPic]=useState('l');
+  const [pic,setPic]=useState('');
   const [listener,setListener]=useState('');
   const [playcount,setPlaycount]=useState('');
   const [summary,setSummary]=useState('');
