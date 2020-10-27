@@ -24,9 +24,9 @@ const Artists = () => {
       .then((data) => {
         setArtist(data.artist['name']);
         setPic(data.artist.image[2]['#text']);
-        setListener(data.artist.stats['listeners']);
-        setPlaycount(data.artist.stats['playcount']);
-        setSummary(data.artist.bio['content']);
+        setListener(data.artist['stats']['listeners']);
+        setPlaycount(data.artist['stats']['playcount']);
+        setSummary(data.artist['bio']['content']);
         setLoading(false);
         setText('');
       });
