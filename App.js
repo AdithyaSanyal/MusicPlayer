@@ -67,11 +67,11 @@ return (
       source={{uri:pic}}
       style={{width: 200, height: 200}}
       />
-      <Text style={{fontSize:25}}>Artist Name: {artist}</Text>
-      <Text style={{fontSize:25}}>Number of Listeners: {listener}</Text>
-      <Text style={{fontSize:25}}>Total PlayCount: {playcount}</Text>
-      <Text style={{fontSize:25}}>About {artist}:</Text>
-      <Text style={{fontSize:15}}>{summary}</Text>
+      <Text style={{fontSize:25,fontWeight:'bold'}}><Text style={{textDecorationLine:'underline'}}>Artist Name:</Text> {artist}</Text>
+      <Text style={{fontSize:25,fontWeight:'bold'}}><Text style={{textDecorationLine:'underline'}}>Number of Listeners:</Text> {listener}</Text>
+      <Text style={{fontSize:25,fontWeight:'bold'}}><Text style={{textDecorationLine:'underline'}}>Total PlayCount:</Text> {playcount}</Text>
+      <Text style={{fontSize:25,fontWeight:'bold',textDecorationLine:'underline'}}>About {artist}:</Text>
+      <Text style={{fontSize:20,fontStyle: 'italic'}}>{summary}</Text>
       </View> 
     </ScrollView>
   );
