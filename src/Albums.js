@@ -18,7 +18,7 @@ const Albums = () => {
     await fetch(`http://ws.audioscrobbler.com/2.0/?method=album.search&album=${text}&api_key=00a0a3d918b14a22e2c3d6d079383b84&format=json`,)
     .then((res) => res.json())
     .then((data) => {
-        for(var i=0;i<50;i++){
+        for(var i=0;i<20;i++){
           // console.log(data.results['albummatches']['album'][i]['name']);
           a.push({
             album:data.results['albummatches']['album'][i]['name'],
