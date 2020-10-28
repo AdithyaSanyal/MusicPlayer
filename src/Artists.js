@@ -52,7 +52,7 @@ const Artists = () => {
         />
       </Appbar.Header>
       <ScrollView>
-        {loading ? <ActivityIndicator size="large" color="grey" /> : null}
+        {loading ? <ActivityIndicator size="large" color="white" /> : null}
         {artist == '' ? null : (
           <Card
             style={{

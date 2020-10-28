@@ -52,7 +52,7 @@ const Albums = () => {
         />
       </Appbar.Header>
 
-      {loading ? <ActivityIndicator size="large" color="grey" /> : null}
+      {loading ? <ActivityIndicator size="large" color="white" /> : null}
       <FlatList
         data={album}
         keyExtractor={(element) => element.url.toString()}

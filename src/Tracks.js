@@ -52,7 +52,7 @@ const Tracks = () => {
         />
       </Appbar.Header>
 
-      {loading ? <ActivityIndicator size="large" color="grey" /> : null}
+      {loading ? <ActivityIndicator size="large" color="white" /> : null}
       <FlatList
         data={track}
         keyExtractor={(element) => element.url.toString()}

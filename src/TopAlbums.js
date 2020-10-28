@@ -5,7 +5,12 @@ import Menu from 'react-native-vector-icons/Ionicons';
 import {useNavigation} from '@react-navigation/native';
 
 const TopAlbums = () => {
+  const [text,setText]=useState('');
   const navigation = useNavigation();
+
+  const fetchData=()=>{
+
+  }
 
   return (
     <View style={styles.container}>
@@ -17,6 +22,12 @@ const TopAlbums = () => {
           onPress={() => {
             navigation.toggleDrawer();
           }}
+        />
+        <Searchbar
+          placeholder="Enter desired genre"
+          style={{marginHorizontal: 30}}
+          onChangeText={(text) => setText(text)}
+          // onIconPress={fetchData}
         />
       </Appbar.Header>
     </View>
