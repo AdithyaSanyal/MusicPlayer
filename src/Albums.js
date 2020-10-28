@@ -59,6 +59,7 @@ const Albums = () => {
         renderItem={({item}) => {
           return (
             <CardAlbum
+              url={item.url}
               albumName={item.name}
               artistName={item.artist}
               imageUrl={item.image[2]['#text']}

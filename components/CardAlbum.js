@@ -13,14 +13,11 @@ const CardAlbum = (props) => {
   const navigation = useNavigation();
   return (
     <TouchableOpacity
-    //   onPress={() => {
-    //     navigation.navigate('videoPlayer', {
-    //       videoId: props.videoId,
-    //       title: props.title,
-    //       channel: props.channel,
-    //       imageUri: image,
-    //     });
-    //   }}
+      onPress={() => {
+        navigation.navigate('Player', {
+         url:props.url
+        });
+      }}
     >
       <View style={styles.cardContainer}>
         <Image

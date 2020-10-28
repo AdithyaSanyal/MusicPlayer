@@ -57,7 +57,7 @@ const Tracks = () => {
         data={track}
         keyExtractor={(element) => element.url.toString()}
         renderItem={({item}) => {
-          return <CardTrack trackName={item.name} artistName={item.artist} />;
+          return <CardTrack url={item.url} trackName={item.name} artistName={item.artist} />;
           //name:item.name
           //musicURL:item.url
           //listeners:item.listeners
