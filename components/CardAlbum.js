@@ -55,8 +55,10 @@ const styles = StyleSheet.create({
   titleText: {
     fontSize: 17,
     width: Dimensions.get('screen').width / 2,
+    color: 'white',
   },
   channelText: {
-    fontSize: 13,
+    fontSize: 14,
+    color: 'white',
   },
 });

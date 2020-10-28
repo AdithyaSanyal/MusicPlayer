@@ -7,10 +7,9 @@ import {useNavigation} from '@react-navigation/native';
 const TopArtists = () => {
   const navigation = useNavigation();
 
-  
   return (
     <View style={styles.container}>
-      <Appbar.Header style={{backgroundColor: 'black'}}>
+      <Appbar.Header style={{backgroundColor: '#1e1e30'}}>
         <Menu
           name="ios-menu"
           size={30}
@@ -20,7 +19,6 @@ const TopArtists = () => {
           }}
         />
       </Appbar.Header>
-      
     </View>
   );
 };
@@ -31,5 +29,6 @@ const styles = StyleSheet.create({
   container: {
     display: 'flex',
     flex: 1,
+    backgroundColor: 'rgb(22, 22, 37)',
   },
 });

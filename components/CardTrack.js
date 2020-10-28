@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TouchableOpacity,
-  Dimensions,
-} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
 const CardTrack = (props) => {
@@ -44,11 +37,13 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   titleText: {
-    fontSize: 15,
-    color: '#00A8E1',
+    fontSize: 18,
+    color: 'white',
   },
   channelText: {
     fontSize: 13,
     borderBottomWidth: 0.5,
+    borderBottomColor: 'white',
+    color: 'white',
   },
 });

@@ -34,7 +34,7 @@ const Artists = () => {
 
   return (
     <View style={styles.container}>
-      <Appbar.Header style={{backgroundColor: 'black'}}>
+      <Appbar.Header style={{backgroundColor: '#1e1e30'}}>
         <Menu
           name="ios-menu"
           size={30}
@@ -52,15 +52,24 @@ const Artists = () => {
         />
       </Appbar.Header>
       <ScrollView>
-        {loading ? <ActivityIndicator size="large" color="black" /> : null}
+        {loading ? <ActivityIndicator size="large" color="grey" /> : null}
         {artist == '' ? null : (
-          <Card style={{margin: 30, elevation: 5}}>
+          <Card
+            style={{
+              margin: 30,
+              elevation: 5,
+              backgroundColor: 'rgba(22,22,37,0)',
+            }}>
             <Card.Content>
-              <Title>Artist Name : {artist}</Title>
-              <Title>Number of Listeners : {listener}</Title>
-              <Title>Total PlayCount : {playcount}</Title>
-              <Title>About {artist}:</Title>
-              <Paragraph style={{fontSize: 16}}>{summary}</Paragraph>
+              <Title style={styles.data}>Artist Name : {artist}</Title>
+              <Title style={styles.data}>
+                Number of Listeners : {listener}
+              </Title>
+              <Title style={styles.data}>Total PlayCount : {playcount}</Title>
+              <Title style={styles.data}>About {artist}:</Title>
+              <Paragraph style={{...styles.data, fontSize: 16}}>
+                {summary}
+              </Paragraph>
             </Card.Content>
           </Card>
         )}
@@ -75,5 +84,9 @@ const styles = StyleSheet.create({
   container: {
     display: 'flex',
     flex: 1,
+    backgroundColor: 'rgb(22, 22, 37)',
+  },
+  data: {
+    color: 'white',
   },
 });

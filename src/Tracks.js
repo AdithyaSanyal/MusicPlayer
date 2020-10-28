@@ -35,7 +35,7 @@ const Tracks = () => {
 
   return (
     <View style={styles.container}>
-      <Appbar.Header style={{backgroundColor: 'black'}}>
+      <Appbar.Header style={{backgroundColor: '#1e1e30'}}>
         <Menu
           name="ios-menu"
           size={30}
@@ -52,7 +52,7 @@ const Tracks = () => {
         />
       </Appbar.Header>
 
-      {loading ? <ActivityIndicator size="large" color="black" /> : null}
+      {loading ? <ActivityIndicator size="large" color="grey" /> : null}
       <FlatList
         data={track}
         keyExtractor={(element) => element.url.toString()}
@@ -70,4 +70,10 @@ const Tracks = () => {
 
 export default Tracks;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    display: 'flex',
+    flex: 1,
+    backgroundColor: 'rgb(22, 22, 37)',
+  },
+});

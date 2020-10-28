@@ -13,13 +13,17 @@ const Drawer = createDrawerNavigator();
 const Navigator = () => {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Artists">
+      <Drawer.Navigator
+        drawerStyle={{backgroundColor: 'rgb(22,22,37)', width: 220}}
+        drawerContentOptions={{inactiveTintColor: 'white'}}
+        drawerType="slide"
+        initialRouteName="Artists">
         <Drawer.Screen name="Artists" component={Artists} />
         <Drawer.Screen name="Albums" component={Albums} />
         <Drawer.Screen name="Tracks" component={Tracks} />
         <Drawer.Screen name="Top Artists" component={TopArtists} />
         <Drawer.Screen name="Top Albums" component={TopAlbums} />
-        <Drawer.Screen name="Top Tracks" component={TopTracks} /> 
+        <Drawer.Screen name="Top Tracks" component={TopTracks} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
