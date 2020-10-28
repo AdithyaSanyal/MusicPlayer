@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
-const Card = (props) => {
+const CardTrack = (props) => {
   const navigation = useNavigation();
   return (
     <TouchableOpacity
@@ -22,27 +22,17 @@ const Card = (props) => {
     //     });
     //   }}
     >
-      <View style={styles.cardContainer}>
-        <Image
-        //   source={{
-        //     uri: `https://i.ytimg.com/vi/${props.videoId}/hqdefault.jpg`,
-        //   }}
-        //   style={{width: '45%', height: 100}}
-        />
-
+      <View>
         <View style={styles.textContainer}>
-          <Text style={styles.titleText} ellipsizeMode="tail">
-            {props.title}
-          </Text>
-
-          <Text style={styles.channelText}>{props.channel}</Text>
+          <Text style={styles.titleText}>{props.trackName}</Text>
+          <Text style={styles.channelText}>Song&#8226;{props.artistName}</Text>
         </View>
       </View>
     </TouchableOpacity>
   );
 };
 
-export default Card;
+export default CardTrack;
 
 const styles = StyleSheet.create({
   cardContainer: {
@@ -51,13 +41,14 @@ const styles = StyleSheet.create({
     marginBottom: 0,
   },
   textContainer: {
-    paddingLeft: 7,
+    margin: 10,
   },
   titleText: {
-    fontSize: 17,
-    width: Dimensions.get('screen').width / 2,
+    fontSize: 15,
+    color: '#00A8E1',
   },
   channelText: {
     fontSize: 13,
+    borderBottomWidth: 0.5,
   },
 });

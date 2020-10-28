@@ -53,15 +53,17 @@ const Artists = () => {
       </Appbar.Header>
       <ScrollView>
         {loading ? <ActivityIndicator size="large" color="black" /> : null}
-        <Card style={{margin: 30, elevation: 5}}>
-          <Card.Content>
-            <Title>Artist Name : {artist}</Title>
-            <Title>Number of Listeners : {listener}</Title>
-            <Title>Total PlayCount : {playcount}</Title>
-            <Title>About {artist}:</Title>
-            <Paragraph style={{fontSize: 16}}>{summary}</Paragraph>
-          </Card.Content>
-        </Card>
+        {artist == '' ? null : (
+          <Card style={{margin: 30, elevation: 5}}>
+            <Card.Content>
+              <Title>Artist Name : {artist}</Title>
+              <Title>Number of Listeners : {listener}</Title>
+              <Title>Total PlayCount : {playcount}</Title>
+              <Title>About {artist}:</Title>
+              <Paragraph style={{fontSize: 16}}>{summary}</Paragraph>
+            </Card.Content>
+          </Card>
+        )}
       </ScrollView>
     </View>
   );

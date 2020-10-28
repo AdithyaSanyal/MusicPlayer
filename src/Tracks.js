@@ -1,29 +1,37 @@
-import React,{useState} from 'react';
-import {StyleSheet, Text, View, ScrollView,ActivityIndicator,FlatList} from 'react-native';
+import React, {useState} from 'react';
+import {
+  StyleSheet,
+  Text,
+  View,
+  ScrollView,
+  ActivityIndicator,
+  FlatList,
+} from 'react-native';
 import {Appbar, Searchbar, Card, Title} from 'react-native-paper';
 import Menu from 'react-native-vector-icons/Ionicons';
 import {useNavigation} from '@react-navigation/native';
-
-
+import CardTrack from '../components/CardTrack';
 
 const Tracks = () => {
-  const [arr,setA]=useState([]);
-  const [track,setTrack]=useState([]);
-  const [text,setText]=useState('');
-  const [loading,setLoading]=useState(false);
+  const [arr, setA] = useState([]);
+  const [track, setTrack] = useState([]);
+  const [text, setText] = useState('');
+  const [loading, setLoading] = useState(false);
   const navigation = useNavigation();
 
-  const fetchData= async ()=>{
+  const fetchData = async () => {
     setLoading(true);
-    await fetch(`http://ws.audioscrobbler.com/2.0/?method=track.search&track=${text}&api_key=00a0a3d918b14a22e2c3d6d079383b84&format=json`,)
-    .then((res) => res.json())
-    .then((data) => {
+    await fetch(
+      `http://ws.audioscrobbler.com/2.0/?method=track.search&track=${text}&api_key=00a0a3d918b14a22e2c3d6d079383b84&format=json`,
+    )
+      .then((res) => res.json())
+      .then((data) => {
         setTrack(data.results.trackmatches.track);
-        console.log(track);
+        // console.log(track);
         setLoading(false);
         setText('');
       });
-  }
+  };
 
   return (
     <View style={styles.container}>
@@ -34,7 +42,6 @@ const Tracks = () => {
           color="white"
           onPress={() => {
             navigation.toggleDrawer();
-            
           }}
         />
         <Searchbar
@@ -47,20 +54,16 @@ const Tracks = () => {
 
       {loading ? <ActivityIndicator size="large" color="black" /> : null}
       <FlatList
-      data={track}
-      keyExtractor={(element)=>element.url.toString()}
-      renderItem={({item})=>{
-        return <Text>{item.artist}</Text>
-        //name:item.name
-        //musicURL:item.url
-        //listeners:item.listeners
-        //image:item.image[2]['#text']
-        
+        data={track}
+        keyExtractor={(element) => element.url.toString()}
+        renderItem={({item}) => {
+          return <CardTrack trackName={item.name} artistName={item.artist} />;
+          //name:item.name
+          //musicURL:item.url
+          //listeners:item.listeners
+          //image:item.image[2]['#text']
         }}
-      
       />
-
-
     </View>
   );
 };
