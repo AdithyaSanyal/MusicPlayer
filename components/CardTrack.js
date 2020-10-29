@@ -1,5 +1,10 @@
 import React from 'react';
-import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import {
+  StyleSheet, 
+  Text, 
+  View, 
+  TouchableOpacity
+} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
 const CardTrack = (props) => {
@@ -8,7 +13,6 @@ const CardTrack = (props) => {
     <TouchableOpacity
       onPress={() => {
         navigation.navigate('Player', {url: props.url,});
-        // console.log(props.url);
       }}
     >
       <View>

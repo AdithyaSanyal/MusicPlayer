@@ -7,7 +7,12 @@ import {
   ActivityIndicator,
   FlatList,
 } from 'react-native';
-import {Appbar, Searchbar, Card, Title} from 'react-native-paper';
+import {
+  Appbar, 
+  Searchbar, 
+  Card, 
+  Title
+} from 'react-native-paper';
 import Menu from 'react-native-vector-icons/Ionicons';
 import {useNavigation} from '@react-navigation/native';
 import CardAlbum from '../components/CardAlbum';
@@ -65,10 +70,6 @@ const Albums = () => {
               imageUrl={item.image[2]['#text']}
             />
           );
-          //Image:item.image[2]['#text']
-          //artist:item.artist
-          //musicURL=item.url
-          // <Text>{item.name}</Text>
         }}
       />
     </View>

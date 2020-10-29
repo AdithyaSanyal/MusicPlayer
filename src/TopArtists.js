@@ -1,6 +1,20 @@
 import React, {useState,useEffect} from 'react';
-import {StyleSheet, View, ScrollView, ActivityIndicator,TouchableOpacity,Text,FlatList} from 'react-native';
-import {Appbar, Searchbar, Card, Title, Paragraph} from 'react-native-paper';
+import {
+  StyleSheet, 
+  View, 
+  ScrollView, 
+  ActivityIndicator,
+  TouchableOpacity,
+  Text,
+  FlatList
+} from 'react-native';
+import {
+  Appbar, 
+  Searchbar, 
+  Card, 
+  Title, 
+  Paragraph
+} from 'react-native-paper';
 import Menu from 'react-native-vector-icons/Ionicons';
 import {useNavigation} from '@react-navigation/native';
 import CardArtist from '../components/CardArtist';
@@ -16,12 +30,9 @@ const TopTracks = () => {
     .then((res)=>res.json())
     .then((data)=>{
       setTopArtists(data.artists.artist);
-      // console.log(data.tracks.track[0].artist.name);
       setLoading(false);
     })
   }
-
-  
 
   return (
     <View style={styles.container}>
@@ -44,7 +55,11 @@ const TopTracks = () => {
         data={topArtists}
         keyExtractor={(element) => element.url.toString()}
         renderItem={({item}) => {
-          return <CardArtist artistName={item.name} playcount={item.playcount} listeners={item.listeners} />;
+          return <CardArtist 
+          artistName={item.name} 
+          playcount={item.playcount} 
+          listeners={item.listeners} 
+          />;
         }}
       />
     </View>

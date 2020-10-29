@@ -1,6 +1,18 @@
 import React, {useState} from 'react';
-import {StyleSheet, View, ScrollView, ActivityIndicator,FlatList} from 'react-native';
-import {Appbar, Searchbar, Card, Title, Paragraph} from 'react-native-paper';
+import {
+  StyleSheet, 
+  View, 
+  ScrollView, 
+  ActivityIndicator,
+  FlatList
+} from 'react-native';
+import {
+  Appbar, 
+  Searchbar, 
+  Card, 
+  Title, 
+  Paragraph
+} from 'react-native-paper';
 import Menu from 'react-native-vector-icons/Ionicons';
 import {useNavigation} from '@react-navigation/native';
 import CardAlbum from '../components/CardAlbum';

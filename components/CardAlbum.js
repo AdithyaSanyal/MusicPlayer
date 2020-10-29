@@ -31,7 +31,9 @@ const CardAlbum = (props) => {
           <Text style={styles.titleText} ellipsizeMode="tail">
             {props.albumName}
           </Text>
-          <Text style={styles.channelText}>{props.artistName}</Text>
+          <Text style={styles.channelText}>
+          {props.artistName}
+          </Text>
         </View>
       </View>
     </TouchableOpacity>
