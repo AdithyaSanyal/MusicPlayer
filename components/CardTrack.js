@@ -7,10 +7,8 @@ const CardTrack = (props) => {
   return (
     <TouchableOpacity
       onPress={() => {
-        navigation.navigate('Player', {
-          url: props.url,
-          
-        });
+        navigation.navigate('Player', {url: props.url,});
+        // console.log(props.url);
       }}
     >
       <View>

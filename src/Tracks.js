@@ -27,7 +27,7 @@ const Tracks = () => {
       .then((res) => res.json())
       .then((data) => {
         setTrack(data.results.trackmatches.track);
-        // console.log(track);
+        // console.log(track.url);
         setLoading(false);
         setText('');
       });

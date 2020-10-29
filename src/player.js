@@ -1,28 +1,39 @@
-import React,{useState} from 'react';
-import {StyleSheet, Text, View, ScrollView,ActivityIndicator,FlatList} from 'react-native';
-import {Appbar, Searchbar, Card, Title} from 'react-native-paper';
+import React, {useState} from 'react';
+import {StyleSheet, View, ScrollView, ActivityIndicator} from 'react-native';
+import {Appbar, Searchbar, Card, Title, Paragraph} from 'react-native-paper';
 import Menu from 'react-native-vector-icons/Ionicons';
 import {useNavigation} from '@react-navigation/native';
 import { WebView } from 'react-native-webview';
-function player({route}) {
-    const url = route.params.url;
 
-    return (
-         <View style={styles.conatiner}>
-         <WebView source={{ uri: url }} />
-       </View> 
-    //      <WebView
-    //      originWhitelist={['*']}
-    //      source={{ html: `<iFrame height=1000 width=1000 src='${url}' />` }}
-    //    />
-       
-   
-       
-    )
-}
+const Player = (props) => {
+  const navigation = useNavigation();
+  const url=props.route.params.url;
+  console.log(props.route.params.url);
+
+  return (
+    // <View style={styles.container}>
+    //   <Appbar.Header style={{backgroundColor: 'black'}}>
+    //     <Menu
+    //       name="ios-menu"
+    //       size={30}
+    //       color="white"
+    //       onPress={() => {
+    //         navigation.toggleDrawer();
+    //       }}
+    //     />
+    //   </Appbar.Header>
+    
+      <WebView source={{ uri: url }} />
+
+    // </View>
+  );
+};
+
+export default Player;
+
 const styles = StyleSheet.create({
-  conatiner: {
-    flex: 1
-  }
+  container: {
+    display: 'flex',
+    flex: 1,
+  },
 });
-export default player

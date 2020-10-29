@@ -7,7 +7,7 @@ import Tracks from '../src/Tracks';
 import TopArtists from '../src/TopArtists';
 import TopAlbums from '../src/TopAlbums';
 import TopTracks from '../src/TopTracks';
-import player from '../src/player';
+import Player from '../src/player';
 
 const Drawer = createDrawerNavigator();
 
@@ -25,7 +25,7 @@ const Navigator = () => {
         <Drawer.Screen name="Top Artists" component={TopArtists} />
         <Drawer.Screen name="Top Albums" component={TopAlbums} />
         <Drawer.Screen name="Top Tracks" component={TopTracks} />
-        <Drawer.Screen name="Player" component={player} />
+        <Drawer.Screen name="Player" component={Player} />
         
       </Drawer.Navigator>
     </NavigationContainer>
