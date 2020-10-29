@@ -44,7 +44,7 @@ const TopTracks = () => {
         data={topTracks}
         keyExtractor={(element) => element.url.toString()}
         renderItem={({item}) => {
-          return <CardTrack trackName={item.name} artistName={item.artist.name} />;
+          return <CardTrack trackName={item.name} artistName={item.artist.name} url={item.url} />;
         }}
       />
     </View>
