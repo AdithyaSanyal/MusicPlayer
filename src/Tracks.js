@@ -7,12 +7,7 @@ import {
   ActivityIndicator,
   FlatList,
 } from 'react-native';
-import {
-  Appbar, 
-  Searchbar, 
-  Card, 
-  Title
-} from 'react-native-paper';
+import {Appbar, Searchbar, Card, Title} from 'react-native-paper';
 import Menu from 'react-native-vector-icons/Ionicons';
 import {useNavigation} from '@react-navigation/native';
 import CardTrack from '../components/CardTrack';
@@ -33,8 +28,8 @@ const Tracks = () => {
       .then((data) => {
         setTrack(data.results.trackmatches.track);
         setLoading(false);
-        setText('');
       });
+    setText('');
   };
 
   return (
@@ -51,6 +46,7 @@ const Tracks = () => {
         <Searchbar
           placeholder="Search for tracks"
           style={{marginHorizontal: 30}}
+          value={text}
           onChangeText={(text) => setText(text)}
           onIconPress={fetchData}
         />
@@ -61,11 +57,13 @@ const Tracks = () => {
         data={track}
         keyExtractor={(element) => element.url.toString()}
         renderItem={({item}) => {
-          return <CardTrack 
-          url={item.url} 
-          trackName={item.name} 
-          artistName={item.artist} 
-          />;
+          return (
+            <CardTrack
+              url={item.url}
+              trackName={item.name}
+              artistName={item.artist}
+            />
+          );
         }}
       />
     </View>

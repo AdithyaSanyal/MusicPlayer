@@ -1,10 +1,5 @@
 import React, {useState} from 'react';
-import {
-  StyleSheet, 
-  View, 
-  ScrollView, 
-  ActivityIndicator
-} from 'react-native';
+import {StyleSheet, View, ScrollView, ActivityIndicator} from 'react-native';
 import {Appbar, Searchbar, Card, Title, Paragraph} from 'react-native-paper';
 import Menu from 'react-native-vector-icons/Ionicons';
 import {useNavigation} from '@react-navigation/native';
@@ -33,8 +28,8 @@ const Artists = () => {
         setPlaycount(data.artist['stats']['playcount']);
         setSummary(data.artist['bio']['content']);
         setLoading(false);
-        setText('');
       });
+    setText('');
   };
 
   return (
@@ -66,20 +61,14 @@ const Artists = () => {
               backgroundColor: 'rgba(22,22,37,0)',
             }}>
             <Card.Content>
-              <Title style={styles.data}>
-              Artist Name : {artist}
-              </Title>
+              <Title style={styles.data}>Artist Name : {artist}</Title>
               <Title style={styles.data}>
                 Number of Listeners : {listener}
               </Title>
-              <Title style={styles.data}>
-              Total PlayCount : {playcount}
-              </Title>
-              <Title style={styles.data}>
-              About {artist}:
-              </Title>
+              <Title style={styles.data}>Total PlayCount : {playcount}</Title>
+              <Title style={styles.data}>About {artist}:</Title>
               <Paragraph style={{...styles.data, fontSize: 16}}>
-              {summary}
+                {summary}
               </Paragraph>
             </Card.Content>
           </Card>

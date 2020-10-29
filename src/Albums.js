@@ -7,12 +7,7 @@ import {
   ActivityIndicator,
   FlatList,
 } from 'react-native';
-import {
-  Appbar, 
-  Searchbar, 
-  Card, 
-  Title
-} from 'react-native-paper';
+import {Appbar, Searchbar, Card, Title} from 'react-native-paper';
 import Menu from 'react-native-vector-icons/Ionicons';
 import {useNavigation} from '@react-navigation/native';
 import CardAlbum from '../components/CardAlbum';
@@ -52,6 +47,7 @@ const Albums = () => {
         <Searchbar
           placeholder="Search for albums"
           style={{marginHorizontal: 30}}
+          value={text}
           onChangeText={(text) => setText(text)}
           onIconPress={fetchData}
         />
